@@ -34,7 +34,7 @@ export const Problem = () => {
             Why Does Getting Healthcare Still Feel So Hard?
           </h2>
           <p className="text-xl text-gray-300">
-            Because people don't have time, rural families don't have access, and nobody likes long waits in clinics.
+            Because people don't have time. rural families don't have access. and nobody likes long waits in clinics.
           </p>
         </motion.div>
 
