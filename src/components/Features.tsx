@@ -1,13 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Video, TestTube, Truck, FileText } from 'lucide-react';
+import { Video, TestTube, Truck, FileText, LucideIcon } from 'lucide-react';
 
-const features = [
+interface Feature {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+interface FeatureCardProps extends Feature {
+  index: number;
+}
+
+const features: Feature[] = [
   {
     icon: Video,
     title: 'Instant Video Consultations',
-    description: 'Connect with nerby  verified doctors instantly through high-quality video calls'
+    description: 'Connect with nearby verified doctors instantly through high-quality video calls'
   },
   {
     icon: TestTube,
@@ -26,7 +36,7 @@ const features = [
   }
 ];
 
-const FeatureCard = ({ icon: Icon, title, description, index }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, description, index }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -49,15 +59,15 @@ const FeatureCard = ({ icon: Icon, title, description, index }) => {
   );
 };
 
-export const Features = () => {
+export const Features: React.FC = () => {
   return (
-    <section 
-      id="features" 
+    <section
+      id="features"
       className="py-20 bg-gray-50 scroll-mt-20"
     >
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -65,7 +75,7 @@ export const Features = () => {
           >
             Healthcare Shouldn't Be a Hassle
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -75,7 +85,6 @@ export const Features = () => {
             We're making it simple with instant access to quality healthcare services
           </motion.p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} index={index} />

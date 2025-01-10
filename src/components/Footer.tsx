@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter, Youtube, Instagram, Mail, Phone } from 'lucide-react';
+import { Twitter,LucideLinkedin, Instagram, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const Footer = () => {
@@ -64,6 +64,16 @@ export const Footer = () => {
             >
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
               <div className="flex gap-4">
+              <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  href="https://www.linkedin.com/in/pokidoc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+                >
+                  <LucideLinkedin className="w-5 h-5" />
+                </motion.a> 
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -74,16 +84,7 @@ export const Footer = () => {
                 >
                   <Twitter className="w-5 h-5" />
                 </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  href="https://youtube.com/@pokidoc?si=Eq7VMdnLNPBWXiYI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
-                >
-                  <Youtube className="w-5 h-5" />
-                </motion.a>
+               
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
